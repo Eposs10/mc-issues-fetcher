@@ -1,24 +1,28 @@
 import Express, { Request, Response } from "express";
 import Path from "path";
-import logger from "./middleware/logging";
+import logger from "./logging";
 import fs from "fs";
 import dayjs from "dayjs";
+import { validateIssueId } from "./util";
 
 const app = Express();
 const port = 4001;
 const pathPublic = Path.resolve(__dirname, "..", "public");
+const mojiraUrl = "https://bugs.mojang.com/browse/MC/issues/";
 
 // Middleware
 app.use(logger);
 app.use(Express.json());
 
 // Routes
-app.get("/", (req: Request, res: Response) => {
-
-});
-
 app.get("/:issue", (req: Request, res: Response) => {
+    const issueId = req.params.issue;
+    if (!validateIssueId(issueId)) {
+        res.sendStatus(404);
+        return;
+    }
     
+    res.status(200).sendFile(pathPublic + '/template.html');
 });
 
 // Start the server
