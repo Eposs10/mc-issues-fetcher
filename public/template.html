@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$title</title>
+
+    <meta content="$issue-title" property="og:title"/>
+    <meta content="$issue-description" property="og:description"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>This site is only used to display embeds, please visit <a href="$issue-link">this link</a> for
+        information about the issue $issue-id.</p>
+    <a class="button" href="$issue-link">Official Minecraft Bug Tracker</a>
+</div>
+</body>
+</html>
