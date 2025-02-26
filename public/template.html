@@ -3,48 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>$title</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="$issue-title" property="og:title"/>
     <meta content="$issue-description" property="og:description"/>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: #0a0f1e;
+            color: #ffffff;
         }
-
         .container {
             padding: 20px;
-            background: white;
+            background: #121a2a;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
         }
-
         a.button {
-            display: inline-block;
+            display: block;
             margin-top: 15px;
-            padding: 10px 20px;
+            padding: 12px 20px;
             text-decoration: none;
-            background-color: #007bff;
-            color: white;
+            background-color: #1e90ff;
+            color: #ffffff;
             border-radius: 5px;
             font-size: 16px;
+            text-align: center;
         }
-
         a.button:hover {
-            background-color: #0056b3;
+            background-color: #0073e6;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <p>This site is only used to display embeds, please visit <a href="$issue-link">this link</a> for
-        information about the issue $issue-id.</p>
+    <p>This site is only used to display embeds.<br>
+        Please visit <a href="$issue-link" style="color: #1e90ff;">this link</a> for information about the issue $issue-id.</p>
     <a class="button" href="$issue-link">Official Minecraft Bug Tracker</a>
 </div>
 </body>
