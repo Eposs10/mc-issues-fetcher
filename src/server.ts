@@ -14,7 +14,11 @@ app.use(logger);
 app.use(Express.json());
 
 // Routes
-app.get("/:issue", async (req: Request, res: Response) => {
+app.get("/", async (req: Request, res: Response) => {
+    res.sendStatus(404);
+});
+
+app.get("/mc-issue/:issue", async (req: Request, res: Response) => {
     const issueId = req.params.issue;
     if (!validateIssueId(issueId)) {
         res.sendStatus(400);
