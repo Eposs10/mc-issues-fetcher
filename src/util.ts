@@ -24,7 +24,10 @@ export async function fetchHTML(url: string): Promise<string> {
 }
 
 export async function fetchRenderedHTML(url: string): Promise<string> {
-    const browser = await puppeteer.launch({headless: true}); // Runs in headless mode
+    const browser = await puppeteer.launch({
+        headless: true, 
+        executablePath: '/usr/bin/chromium-browser',
+    }); // Runs in headless mode
     const page = await browser.newPage();
 
     await page.goto(url, {waitUntil: "networkidle2"}); // Waits for the page to fully load
